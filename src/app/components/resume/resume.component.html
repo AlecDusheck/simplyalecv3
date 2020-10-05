@@ -1,0 +1,27 @@
+<app-bordered-page>
+
+    <div id="title">
+        <span>Requesting my résumé</span>
+    </div>
+    <div *ngIf="checkingBlocked" id="loading">
+        <div class="spinner"></div>
+        <p>Getting file contents...</p>
+    </div>
+    <div *ngIf="!checkingBlocked && blocked" id="blocked">
+        <p>Sorry, my résumé is unavailable at the moment. Please e-mail me for a copy.</p>
+    </div>
+    <div *ngIf="!checkingBlocked && !blocked" id="contact-form">
+        <p>Sadly, the process to get my résumé is a tad bit more involved. Due to abuse, I'm going to have to require
+            you to put your email in the field below and have myself sent you a copy of my resume (attached in the
+            email).</p>
+
+        <form (submit)="onSubmit()" [formGroup]="resumeRequestForm">
+            <div class="emailSubmit">
+                <input formControlName="email" id="emailField" placeholder="Email"
+                       type="email">
+                <input [disabled]="loading || resumeRequestForm.invalid || submitted" id="submitBtn" type="submit"
+                       value="{{subText}}">
+            </div>
+        </form>
+    </div>
+</app-bordered-page>

@@ -1,0 +1,64 @@
+#container {
+  margin: 0 10% 10%;
+}
+
+#content {
+  margin-top: 5vh;
+}
+
+.wave {
+  height: 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 2; /* I want the waves to overwrite text. */
+  left: 0;
+  margin: 0 0 0 0;
+  bottom: 0;
+}
+
+.wave {
+  -webkit-animation: wave-animation 6.3s infinite linear; /* Safari 4+ */
+  -moz-animation: wave-animation 6.3s infinite linear; /* Fx 5+ */
+  -o-animation: wave-animation 6.3s infinite linear; /* Opera 12+ */
+  animation: wave-animation 6.3s infinite linear; /* IE 10+ */
+}
+
+@-webkit-keyframes wave-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1601px 0;
+  }
+}
+
+@-moz-keyframes wave-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1601px 0;
+  }
+}
+
+@-o-keyframes wave-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1601px 0;
+  }
+}
+
+@keyframes wave-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1601px 0;
+  }
+}
+
+.wave {
+  background: url('~src/assets/wave.png') 0 0 repeat-x;
+}

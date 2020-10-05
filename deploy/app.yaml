@@ -1,0 +1,44 @@
+runtime: php55
+threadsafe: true
+api_version: 1
+
+handlers:
+  - url: /(.+\.js)
+    static_files: app/\1
+    upload: app/(.+\.js)
+
+  - url: /(.+\.css)
+    static_files: app/\1
+    upload: app/(.+\.css)
+
+  - url: /(.+\.png)
+    static_files: app/\1
+    upload: app/(.+\.png)
+
+  - url: /(.+\.jpg)
+    static_files: app/\1
+    upload: app/(.+\.jpg)
+    
+  - url: /(.+\.jpeg)
+    static_files: app/\1
+    upload: app/(.+\.jpeg)
+
+  - url: /(.+\.svg)
+    static_files: app/\1
+    upload: app/(.+\.svg)
+
+  - url: /favicon.ico
+    static_files: app/favicon.ico
+    upload: app/favicon.ico
+
+  - url: /(.+\.json)
+    static_files: app/\1
+    upload: app/(.+\.json)
+
+  - url: /(.+)
+    static_files: app/index.html
+    upload: app/index.html
+
+  - url: /
+    static_files: app/index.html
+    upload: app/index.html
